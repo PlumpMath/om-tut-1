@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hello Clojurescript</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+
+
+
+        <div class="container">
+          <h1>Hello Clojurescript!</h1>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">Comments</div>
+            <div class="panel-body" id="app"></div>
+            <div id="message"></div>
+          </div>
+          <input type="text" id="animal-name"/>
+          <input type="button" id="btn-add-animal" class="btn btn-default" value="Add Animal"/>
+        </div>
+
+        <script src="http://fb.me/react-0.11.1.js"></script>
+        <script src="out/goog/base.js" type="text/javascript"></script>
+        <script src="om_tut.js" type="text/javascript"></script>
+        <script type="text/javascript">goog.require("om_tut.core");</script>
+    </body>
+</html>
