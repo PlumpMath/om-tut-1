@@ -11,7 +11,7 @@
 
 (enable-console-print!)
 
-(def app-state (atom {:list ["Lion" "Zebra" "Buffalo" "Antelope"]}))
+(def app-state (atom ["Lion" "Zebra" "Buffalo" "Antelope"]))
 
 (defn stripe [text bgc]
   (let [st #js {:backgroundColor bgc}]
@@ -44,10 +44,10 @@
 
 
 (om/root
- (fn [app owner]
+ (fn [animals owner]
    (om/component
     (apply dom/ul nil
-           (map stripe (:list app) (cycle ["red" "gray"])))))
+           (map stripe animals (cycle ["red" "gray"])))))
   app-state
   {:target (by-id "app")})
 
@@ -61,12 +61,13 @@
       (show! "Clicked!")
       (let
         [newanimal (by-id "animal-name")]
-        (swap! app-state conj :list ["sf"])))))
+        (swap! app-state conj (.-value newanimal))))))
 
 (add-animal)
 
 
-; now we need to click a button and respond to it
+; task: use loop and recur to add animals on every click
+; exit the loop when user clicks done!
 
 
 
